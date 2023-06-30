@@ -1,0 +1,210 @@
+@font-face {
+	font-family:'Catamaran';
+	src:local('Catamaran Regular'),
+		url('fonts/Catamaran-Regular.woff2') format('woff2'),
+		url('fonts/Catamaran-Regular.woff') format('woff');
+	font-display: swap;
+}
+@font-face {
+	font-family:'Catamaran';
+	src:local('Catamaran Bold'),
+		url('fonts/Catamaran-Bold.woff2') format('woff2'),
+		url('fonts/Catamaran-Bold.woff') format('woff');
+	font-display: swap;
+	font-weight: bold;
+}
+@media screen {
+	::selection { background-color: #333333; color: #ffffff; }
+	:target ~ .about, .hide, .page:not(:target), .section, .text ~ .helper {
+		height: 1px; left: -1000px; overflow: hidden; position: absolute; top: -1px; width: 1px; }
+	.about, .page:target, .t_show:target, .text:focus ~ .helper,
+	#all-1:checked ~ .all-1, #all-2:checked ~ .all-2, #all-3:checked ~ .all-3, #all-4:checked ~ .all-4, #all-5:checked ~ .all-5, #all-6:checked ~ .all-6, #all-7:checked ~ .all-7, #all-8:checked ~ .all-8, #all-9:checked ~ .all-9, #all-10:checked ~ .all-10, #car-1:checked ~ .car-1, #car-2:checked ~ .car-2, #car-3:checked ~ .car-3, #car-4:checked ~ .car-4, #car-5:checked ~ .car-5, #den-1:checked ~ .den-1, #den-2:checked ~ .den-2, #den-3:checked ~ .den-3, #den-4:checked ~ .den-4, #den-5:checked ~ .den-5, #der-1:checked ~ .der-1, #der-2:checked ~ .der-2, #der-3:checked ~ .der-3, #der-4:checked ~ .der-4, #der-5:checked ~ .der-5, #end-1:checked ~ .end-1, #end-2:checked ~ .end-2, #end-3:checked ~ .end-3, #end-4:checked ~ .end-4, #end-5:checked ~ .end-5, #ent-1:checked ~ .ent-1, #ent-2:checked ~ .ent-2, #ent-3:checked ~ .ent-3, #ent-4:checked ~ .ent-4, #ent-5:checked ~ .ent-5, #gas-1:checked ~ .gas-1, #gas-2:checked ~ .gas-2, #gas-3:checked ~ .gas-3, #gas-4:checked ~ .gas-4, #gas-5:checked ~ .gas-5, #gyn-1:checked ~ .gyn-1, #gyn-2:checked ~ .gyn-2, #gyn-3:checked ~ .gyn-3, #gyn-4:checked ~ .gyn-4, #gyn-5:checked ~ .gyn-5, #hep-1:checked ~ .hep-1, #hep-2:checked ~ .hep-2, #hep-3:checked ~ .hep-3, #hep-4:checked ~ .hep-4, #hep-5:checked ~ .hep-5, #nep-1:checked ~ .nep-1, #nep-2:checked ~ .nep-2, #nep-3:checked ~ .nep-3, #nep-4:checked ~ .nep-4, #nep-5:checked ~ .nep-5, #neu-1:checked ~ .neu-1, #neu-2:checked ~ .neu-2, #neu-3:checked ~ .neu-3, #neu-4:checked ~ .neu-4, #neu-5:checked ~ .neu-5, #onc-1:checked ~ .onc-1, #onc-2:checked ~ .onc-2, #onc-3:checked ~ .onc-3, #onc-4:checked ~ .onc-4, #onc-5:checked ~ .onc-5, #ort-1:checked ~ .ort-1, #ort-2:checked ~ .ort-2, #ort-3:checked ~ .ort-3, #ort-4:checked ~ .ort-4, #ort-5:checked ~ .ort-5, #pod-1:checked ~ .pod-1, #pod-2:checked ~ .pod-2, #pod-3:checked ~ .pod-3, #pod-4:checked ~ .pod-4, #pod-5:checked ~ .pod-5, #psy-1:checked ~ .psy-1, #psy-2:checked ~ .psy-2, #psy-3:checked ~ .psy-3, #psy-4:checked ~ .psy-4, #psy-5:checked ~ .psy-5, #pul-1:checked ~ .pul-1, #pul-2:checked ~ .pul-2, #pul-3:checked ~ .pul-3, #pul-4:checked ~ .pul-4, #pul-5:checked ~ .pul-5, #rhe-1:checked ~ .rhe-1, #rhe-2:checked ~ .rhe-2, #rhe-3:checked ~ .rhe-3, #rhe-4:checked ~ .rhe-4, #rhe-5:checked ~ .rhe-5, #uro-1:checked ~ .uro-1, #uro-2:checked ~ .uro-2, #uro-3:checked ~ .uro-3, #uro-4:checked ~ .uro-4, #uro-5:checked ~ .uro-5, #vis-1:checked ~ .vis-1, #vis-2:checked ~ .vis-2, #vis-3:checked ~ .vis-3, #vis-4:checked ~ .vis-4, #vis-5:checked ~ .vis-5 {
+		height: auto; left: auto; overflow: auto; position: static; top: auto; width: auto; }
+	.body {
+		background-color: #389bd2;}
+	.button, .buzzer, .check + .txt:before {
+		background-color: #ededed;
+		border: 1px solid #aaaaaa; }
+	.button:hover, .buzzer:hover {
+		background-color: #e6e6e6; }
+	.about, .nav, .page, .t_show:target {
+		background-color: #ffffff;
+		border-radius: 0.5em;
+		margin: 0 2em 2em 2em; }
+	.error-head, .error-sub, .error-txt, .page, .subheading, .subsection, .text, .txt {
+		color: #333333; }
+	.helper {
+		color: #757575;
+		display: block; }
+	.build, .build a, .copyright, .heading, .subtitle {
+		color: #ffffff; }
+	.check + .txt:before {
+		content: "";
+		height: 1.5em;
+		margin: 0.2em 1em 0.2em -1.2em;
+		width: 1.5em; }
+	.copyright::before {
+		content: "\00a9";
+		cursor: text;
+		padding-right: 0.2em; }
+	.check:checked + .txt:before {
+		content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTIzIDEuNWMtNy44IDYtMTUuMyAxMy45LTE1LjMgMTMuOWwtNS40LTQuOUwwIDEyLjhjMi4yIDIuMSA3LjQgNy42IDkuMSA5LjcgNS04LjIgMTAtMTQuMyAxNC45LTIwbC0xLTF6Ii8+PC9zdmc+); }
+	.page {
+		content-visibility: auto; }
+	.button, .buzzer {
+		cursor: pointer; }
+	.buzzer, .region {
+		color: inherit; }
+	.buzzer {
+		display: inline-block;
+		min-width: 100px;
+		padding: 1em 2em;
+		text-decoration: none; }
+	.anchor, .group {
+		display: flex; }
+	.footer, .header {
+		display: grid; }
+	.check + .txt:before, .check + .txt, .tag {
+		display: inline-block; }
+	.item {
+		flex-basis: 25%; }
+	.group {
+		flex-wrap: wrap; }
+	.build, .button, .buzzer, .copyright, .dfn, .error-head, .error-sub, .error-txt, .heading, .helper, .region, .subheading, .subsection, .subtitle, .tag, .text, .txt {
+		font-family: 'Catamaran', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+	.heading {
+		font-size: 4em;
+		letter-spacing: 0.02em; }
+	.error-head {
+		font-size: 2.5em; }
+	.error-sub, .subheading {
+		font-size: 1.5em; }
+	.subsection, .subtitle {
+		font-size: 1.2em; }
+	.button, .text {
+		font-size: 1em; }
+	.dfn {
+		cursor: help;
+		font-style: normal; }
+	.build {
+		grid-area: build;
+		text-align: right; }
+	.copyright {
+		grid-area: copyright; }
+	.heading {
+		grid-area: heading;
+		margin-top: 0; }
+	.logo {
+		grid-area: logo; }
+	.nav {
+		grid-area: nav; }
+	.subtitle {
+		grid-area: subtitle;
+		margin-top: -0.75em; }
+	.header {
+		grid-template-areas: "logo heading" "logo subtitle";
+		grid-template-columns: 6em auto;
+		grid-template-rows: 1fr 0.5fr;
+		justify-content: center; }
+	.footer {
+		grid-template-areas: "nav nav" "copyright build";
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto; }
+	.logo {
+		height: 6em;
+		margin-top: 1.2em;
+		width: 6em; }
+	.anchor, .footer {
+		justify-content: space-around;
+		margin: 2em auto; }
+	.anchor, .form, .group {
+		list-style-type: none;
+		padding-left: 0; }
+	.error-head, .error-sub, .footer, .progress {
+		margin: 0 auto; }
+	.heading, .subtitle {
+		margin-bottom: 0; }
+	.list {
+		margin-bottom: 1em; }
+	#profile .helper {
+		margin-left: 11.5em; }
+	.tag, .text {
+		margin-right: 0.5em; }
+	.footer, .progress {
+		max-width: 900px; }
+	.check + .txt {
+		min-width: calc(50% - 1.5em); }
+	.tag {
+		min-width: 11em; }
+	.button {
+		min-width: 160px;
+		padding-bottom: 1em;
+		padding-top: 1em }
+	.drop {
+		padding-right: 0.5em; }
+	.about, .build, .copyright, .nav, .page {
+		padding-left: 2em;
+		padding-right: 2em; }
+	.buzzer, .check + .txt:before, .error-head, .error-sub, .error-txt, .subheading, .subsection {
+		text-align: center; }
+	.check + .txt:before, .helper, .tag {
+		vertical-align: middle; }
+	.area {
+		width: calc(100% - 14px); }
+}
+@media screen and (max-width: 650px) {
+	.item {
+		flex-basis: 33%; }
+}
+@media (prefers-color-scheme: dark) {
+	.body {
+		background-color: #121212; }
+	.about, .nav, .page, .t_show:target {
+		background-color: #222222; }
+	.button, .buzzer, .text {
+		background-color: #383838; }
+	.button, .buzzer {
+		border-color: #575757; }
+	.button, .buzzer, .error-head, .error-sub, .error-txt, .helper, .nav, .subheading, .subsection, .tag, .text, .txt {
+		color: #dfdfdf; }
+	.button:hover, .buzzer:hover {
+		color: #121212; }
+}
+@media (prefers-reduced-motion: reduce), (update: slow) {
+	*:not(.safe-animation),
+	*:not(.safe-animation)::before,
+	*:not(.safe-animation)::after {
+		animation-delay: -1ms !important;
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		background-attachment: initial !important;
+		scroll-behavior: auto !important;
+		transition-delay: -1ms !important;
+		transition-duration: 1ms !important;
+	}
+}
+@media print {
+	.build a, .copy a {
+		color: #000000;
+		text-decoration: none; }
+	.link {
+		color: #000000;
+		text-decoration: none; }
+	.copyright::before {
+		content: "\00a9";
+		padding-right: 0.2em; }
+	.build a::after {
+		content: ": " attr(href); }
+	.footer {
+		display: flex;
+		justify-content: center; }
+	.anchor, .hide, .logo, .nav, .page {
+		display: none; }
+	.body {
+		font-family: Constantia, Palatino, 'Book Antiqua', 'Palatino Linotype', serif; }
+	.build, .copyright {
+		padding-left: 1em;
+		padding-right: 1em; }
+	.header {
+		text-align: center; }
+}

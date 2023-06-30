@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Medica11y - Your Personal Health Record</title>
+		<meta name="description" content="This privacy focused (non-cloud) app helps you manage your health by organizing your medical history into an easy to read HTML file you can carry offline.">
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="cache/fonts/Catamaran-Regular.woff2">
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="cache/fonts/Catamaran-Bold.woff2">
+		<link rel="stylesheet" href="cache/style.css">
+		<link rel="author" type="text/plain" href="humans.txt">
+		<meta name="apple-mobile-web-app-title" content="Medica11y">
+		<meta name="referrer" content="no-referrer">
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+		<link rel="icon" type="image/svg+xml" href="images/icon.svg">
+		<link rel="manifest" href="site.webmanifest">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="msapplication-config" content="browserconfig.xml">
+		<meta property="og:title" content="Medica11y">
+		<meta property="og:description" content="This privacy focused (non-cloud) app helps you manage your health by organizing your medical history into an easy to read HTML file you can carry offline.">
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_us">
+		<meta property="og:url" content="https://medica11y.com/">
+		<meta property="og:image" content="images/banner.png">
+		<meta property="og:image:alt" content="Logo">
+		<script type="application/ld+json">
+		{
+			"@context" : "https://schema.org",
+			"@type" : "WebSite",
+			"name": "Medica11y",
+			"url": "https://medica11y.com/"
+		}
+		</script>
+	</head>
+	<body class="body">
+		<header class="header">
+			<svg class="logo" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><rect width="12" height="14" x="2" y="2" fill="#eceff1" rx="1" ry="1"/><path fill="#455a64" d="M10.5 1H9.41a1.5 1.5 0 00-2.83 0H5.5a.5.5 0 00-.5.5v2a.5.5 0 00.5.5h5a.5.5 0 00.5-.5v-2a.5.5 0 00-.5-.5z"/><path fill="#2196f3" d="M11.5 8a.5.5 0 00-.47.32l-.97 2.58-1.58-5.54a.5.5 0 00-.94-.04L5.87 9.48 4.9 8.2a.5.5 0 00-.4-.2H2v1h2.25l1.35 1.8a.5.5 0 00.86-.11l1.46-3.65 1.6 5.6a.5.5 0 00.46.36H10a.5.5 0 00.47-.32L11.85 9H14V8z"/></svg>
+			<h1 class="heading">Medica11y</h1>
+			<p class="subtitle">Track Your Health, Focus On Privacy</p>
+			<nav class="hide"><a href="#about">Skip to main content</a></nav>
+		</header>
+		<main class="main">
+			<form class="progress">
+				<article class="page" id="start">
+					<h2 class="subheading">Start</h2>
+					<p class="txt">Do you want to import your progress?</p>
+					<input class="hide" id="import" type="file" accept="application/json"><label class="buzzer" for="import">Import A File</label>
+					<input class="button" type="reset" value="Reset Data">
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#profile">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="profile">
+					<h2 class="subheading">Profile</h2>
+					<ul class="form" role="list">
+						<li class="list"><label class="tag" for="dob">Date Of Birth:</label><input class="text" type="date" id="dob" name="dob" autocomplete="bday"></li>
+						<li class="list"><label class="tag" for="hid">Healthcare ID:</label><input class="text" type="text" id="hid" name="hid" size="15"><label class="helper" for="hid">Your hospital or patient number (NHS, Bupa, Medicare, Etc).</label></li>
+						<li class="list"><label class="tag" for="iid">Insurance ID:</label><input class="text" type="text" id="iid" name="iid" size="15"><label class="tag" for="exp">Expiry:</label><input class="text" type="date" id="exp" name="exp"><label class="helper" for="iid">Your healthcare coverage identifier (NHS-PPC, EHIC, SIN, Etc).</label></li>
+						<li class="list"><label class="tag" for="blood">Blood Type:</label><input class="text" type="text" id="blood" name="blood" minlength="1" maxlength="2" size="2"><select class="drop text" name="pn" id="pn"><option value="">None</option><option value="Positive">Positive (+)</option><option value="Negative">Negative (-)</option></select></li>
+						<li class="list"><label class="tag" for="organ">Organ Donor:</label><select class="drop text" name="organ" id="organ"><option value="Yes">Yes</option><option value="No" selected>No</option></select></li>
+						<li class="list"><label class="tag" for="diabetic">Diabetes:</label><select class="drop text" name="diabetic" id="diabetic"><option value="" selected>None</option><option value="Type 1">Type 1</option><option value="Type 2">Type 2</option></select></li>
+						<li class="list"><label class="tag" for="height">Height:</label><input class="text" type="text" inputmode="numeric" pattern="[0-9]*" id="height" name="height" minlength="1" maxlength="3" size="3"><input class="text" type="text" inputmode="numeric" pattern="[0-9]*" id="height2" name="height2" minlength="1" maxlength="2" size="2"><select class="drop text" name="ftincm" id="ftincm"><option value="ftin">Feet (ft) / Inches (")</option><option value="cm">Centimeters (cm)</option></select></li>
+						<li class="list"><label class="tag" for="weight">Weight:</label><input class="text" type="text" inputmode="numeric" pattern="[0-9]*" id="weight" name="weight" minlength="1" maxlength="3" size="3"><input class="text" type="text" inputmode="numeric" pattern="[0-9]*" id="weight2" name="weight2" minlength="1" maxlength="2" size="2"><select class="drop text" name="slbskg" id="slbskg"><option value="slbs">Stone (st) / Pounds (lbs)</option><option value="kg">Kilograms (kg)</option></select></li>
+						<li class="list"><label class="tag" for="pulse">Pulse (Average):</label><input class="text" type="text" inputmode="numeric" pattern="[0-9]*" id="pulse" name="pulse" minlength="1" maxlength="3" size="3"><label class="helper" for="pulse">Take 3 times at different points of the day to get the average beats per minute (BPM).</label></li>
+						<li class="list"><label class="tag" for="sys">Blood Pressure (Average):</label><input class="text" type="text" inputmode="numeric" pattern="[0-9]*" id="sys" name="sys" minlength="1" maxlength="3" size="3"><span class="text">/</span><input class="text" type="text" inputmode="numeric" pattern="[0-9]*" id="dia" name="dia" minlength="1" maxlength="3" size="3"><label class="helper" for="sys">Take 3 times at different points of the day to get the average blood pressure reading (Systolic / Diastolic - mm Hg).</label></li>
+						<li class="list"><label class="tag" for="temp">Temperature (Average):</label><input class="text" type="text" id="temp" name="temp" minlength="1" maxlength="5" size="5"><select class="drop text" name="fc" id="fc"><option value="f" selected>Fahrenheit (f)</option><option value="c">Centigrade (C)</option></select><label class="helper" for="temp">Take 3 times at different points of the day to get the average temperature.</label></li>
+						<li class="list"><label class="tag" for="peakflow">Peak Flow (Average):</label><input class="text" type="text" inputmode="numeric" pattern="[0-9]*" id="peakflow" name="peakflow" minlength="1" maxlength="3" size="3"><label class="helper" for="peakflow">Take 3 times to get a base reading, and follow up with 3 further readings on different days to get the average peak flow.</label></li>
+					</ul>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#start">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#allergy">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="allergy">
+					<h2 class="subheading">Allergy</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="all-1" name="diagnosis"><label class="txt" for="all-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="all-2" name="complications"><label class="txt" for="all-2">Complications</label>
+					<input class="check" type="checkbox" id="all-3" name="investigations"><label class="txt" for="all-3">Investigations</label>
+					<input class="check" type="checkbox" id="all-4" name="treatments"><label class="txt" for="all-4">Treatments</label>
+					<input class="check" type="checkbox" id="all-5" name="clinics"><label class="txt" for="all-5">Clinics</label>
+					<input class="check" type="checkbox" id="all-6" name="avoidance"><label class="txt" for="all-6">Avoidance</label>
+					<input class="check" type="checkbox" id="all-7" name="minor"><label class="txt" for="all-7">Minor</label>
+					<input class="check" type="checkbox" id="all-8" name="contact"><label class="txt" for="all-8">Contact</label>
+					<input class="check" type="checkbox" id="all-9" name="major"><label class="txt" for="all-9">Major</label>
+					<input class="check" type="checkbox" id="all-10" name="dangerous"><label class="txt" for="all-10">Dangerous</label>
+					<article class="section all-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="allergy-diagnosis" name="allergy-diagnosis" rows="6"></textarea><label class="helper" for="allergy-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section all-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="allergy-complications" name="allergy-complications" rows="6"></textarea><label class="helper" for="allergy-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section all-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="allergy-investigations" name="allergy-investigations" rows="6"></textarea><label class="helper" for="allergy-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section all-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="allergy-treatments" name="allergy-treatments" rows="6"></textarea><label class="helper" for="allergy-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section all-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="allergy-clinics" name="allergy-clinics" rows="6"></textarea><label class="helper" for="allergy-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section all-6">
+						<h3 class="subsection">Avoidance</h3>
+						<textarea class="text area" id="allergy-avoidance" name="allergy-avoidance" rows="6"></textarea><label class="helper" for="allergy-avoidance">Food avoidance includes personal choice (vegan), religion, medical (stoma issues), etc. Put each avoidance on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section all-7">
+						<h3 class="subsection">Minor</h3>
+						<textarea class="text area" id="allergy-minor" name="allergy-minor" rows="6"></textarea><label class="helper" for="allergy-minor">Minor allergy include itchy throat, hay fever, oral allergy syndrome, etc. Put each minor allergy on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section all-8">
+						<h3 class="subsection">Contact</h3>
+						<textarea class="text area" id="allergy-contact" name="allergy-contact" rows="6"></textarea><label class="helper" for="allergy-contact">Contact allergy include patch tests, skin rashes, touch or airborne reactions, etc. Put each contact allergy on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section all-9">
+						<h3 class="subsection">Major</h3>
+						<textarea class="text area" id="allergy-major" name="allergy-major" rows="6"></textarea><label class="helper" for="allergy-major">Major allergy include asthma or airway triggers, moderate drug reactions, etc. Put each major allergy on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section all-10">
+						<h3 class="subsection">Dangerous</h3>
+						<textarea class="text area" id="allergy-dangerous" name="allergy-dangerous" rows="6"></textarea><label class="helper" for="allergy-dangerous">Dangerous allergy include anaphylaxis (shock), significant drug reactions, etc. Put each dangerous allergy on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#profile">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#cardiology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="cardiology">
+					<h2 class="subheading">Cardiology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="car-1" name="diagnosis"><label class="txt" for="car-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="car-2" name="complications"><label class="txt" for="car-2">Complications</label>
+					<input class="check" type="checkbox" id="car-3" name="investigations"><label class="txt" for="car-3">Investigations</label>
+					<input class="check" type="checkbox" id="car-4" name="treatments"><label class="txt" for="car-4">Treatments</label>
+					<input class="check" type="checkbox" id="car-5" name="clinics"><label class="txt" for="car-5">Clinics</label>
+					<article class="section car-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="cardiology-diagnosis" name="cardiology-diagnosis" rows="6"></textarea><label class="helper" for="cardiology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section car-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="cardiology-complications" name="cardiology-complications" rows="6"></textarea><label class="helper" for="cardiology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section car-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="cardiology-investigations" name="cardiology-investigations" rows="6"></textarea><label class="helper" for="cardiology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section car-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="cardiology-treatments" name="cardiology-treatments" rows="6"></textarea><label class="helper" for="cardiology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section car-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="cardiology-clinics" name="cardiology-clinics" rows="6"></textarea><label class="helper" for="cardiology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#allergy">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#dental">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="dental">
+					<h2 class="subheading">Dental</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="den-1" name="diagnosis"><label class="txt" for="den-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="den-2" name="complications"><label class="txt" for="den-2">Complications</label>
+					<input class="check" type="checkbox" id="den-3" name="investigations"><label class="txt" for="den-3">Investigations</label>
+					<input class="check" type="checkbox" id="den-4" name="treatments"><label class="txt" for="den-4">Treatments</label>
+					<input class="check" type="checkbox" id="den-5" name="clinics"><label class="txt" for="den-5">Clinics</label>
+					<article class="section den-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="dental-diagnosis" name="dental-diagnosis" rows="6"></textarea><label class="helper" for="dental-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section den-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="dental-complications" name="dental-complications" rows="6"></textarea><label class="helper" for="dental-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section den-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="dental-investigations" name="dental-investigations" rows="6"></textarea><label class="helper" for="dental-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section den-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="dental-treatments" name="dental-treatments" rows="6"></textarea><label class="helper" for="dental-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section den-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="dental-clinics" name="dental-clinics" rows="6"></textarea><label class="helper" for="dental-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#cardiology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#dermatology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="dermatology">
+					<h2 class="subheading">Dermatology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="der-1" name="diagnosis"><label class="txt" for="der-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="der-2" name="complications"><label class="txt" for="der-2">Complications</label>
+					<input class="check" type="checkbox" id="der-3" name="investigations"><label class="txt" for="der-3">Investigations</label>
+					<input class="check" type="checkbox" id="der-4" name="treatments"><label class="txt" for="der-4">Treatments</label>
+					<input class="check" type="checkbox" id="der-5" name="clinics"><label class="txt" for="der-5">Clinics</label>
+					<article class="section der-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="dermatology-diagnosis" name="dermatology-diagnosis" rows="6"></textarea><label class="helper" for="dermatology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section der-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="dermatology-complications" name="dermatology-complications" rows="6"></textarea><label class="helper" for="dermatology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section der-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="dermatology-investigations" name="dermatology-investigations" rows="6"></textarea><label class="helper" for="dermatology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section der-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="dermatology-treatments" name="dermatology-treatments" rows="6"></textarea><label class="helper" for="dermatology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section der-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="dermatology-clinics" name="dermatology-clinics" rows="6"></textarea><label class="helper" for="dermatology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#dental">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#endocrinology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="endocrinology">
+					<h2 class="subheading">Endocrinology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="end-1" name="diagnosis"><label class="txt" for="end-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="end-2" name="complications"><label class="txt" for="end-2">Complications</label>
+					<input class="check" type="checkbox" id="end-3" name="investigations"><label class="txt" for="end-3">Investigations</label>
+					<input class="check" type="checkbox" id="end-4" name="treatments"><label class="txt" for="end-4">Treatments</label>
+					<input class="check" type="checkbox" id="end-5" name="clinics"><label class="txt" for="end-5">Clinics</label>
+					<article class="section end-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="endocrinology-diagnosis" name="endocrinology-diagnosis" rows="6"></textarea><label class="helper" for="endocrinology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section end-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="endocrinology-complications" name="endocrinology-complications" rows="6"></textarea><label class="helper" for="endocrinology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section end-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="endocrinology-investigations" name="endocrinology-investigations" rows="6"></textarea><label class="helper" for="endocrinology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section end-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="endocrinology-treatments" name="endocrinology-treatments" rows="6"></textarea><label class="helper" for="endocrinology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section end-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="endocrinology-clinics" name="endocrinology-clinics" rows="6"></textarea><label class="helper" for="endocrinology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#dermatology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#ENT">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="ENT">
+					<h2 class="subheading">ENT</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="ent-1" name="diagnosis"><label class="txt" for="ent-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="ent-2" name="complications"><label class="txt" for="ent-2">Complications</label>
+					<input class="check" type="checkbox" id="ent-3" name="investigations"><label class="txt" for="ent-3">Investigations</label>
+					<input class="check" type="checkbox" id="ent-4" name="treatments"><label class="txt" for="ent-4">Treatments</label>
+					<input class="check" type="checkbox" id="ent-5" name="clinics"><label class="txt" for="ent-5">Clinics</label>
+					<article class="section ent-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="ENT-diagnosis" name="ENT-diagnosis" rows="6"></textarea><label class="helper" for="ENT-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section ent-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="ENT-complications" name="ENT-complications" rows="6"></textarea><label class="helper" for="ENT-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section ent-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="ENT-investigations" name="ENT-investigations" rows="6"></textarea><label class="helper" for="ENT-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section ent-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="ENT-treatments" name="ENT-treatments" rows="6"></textarea><label class="helper" for="ENT-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section ent-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="ENT-clinics" name="ENT-clinics" rows="6"></textarea><label class="helper" for="ENT-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#endocrinology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#gastroenterology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="gastroenterology">
+					<h2 class="subheading">Gastroenterology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="gas-1" name="diagnosis"><label class="txt" for="gas-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="gas-2" name="complications"><label class="txt" for="gas-2">Complications</label>
+					<input class="check" type="checkbox" id="gas-3" name="investigations"><label class="txt" for="gas-3">Investigations</label>
+					<input class="check" type="checkbox" id="gas-4" name="treatments"><label class="txt" for="gas-4">Treatments</label>
+					<input class="check" type="checkbox" id="gas-5" name="clinics"><label class="txt" for="gas-5">Clinics</label>
+					<article class="section gas-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="gastroenterology-diagnosis" name="gastroenterology-diagnosis" rows="6"></textarea><label class="helper" for="gastroenterology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section gas-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="gastroenterology-complications" name="gastroenterology-complications" rows="6"></textarea><label class="helper" for="gastroenterology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section gas-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="gastroenterology-investigations" name="gastroenterology-investigations" rows="6"></textarea><label class="helper" for="gastroenterology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section gas-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="gastroenterology-treatments" name="gastroenterology-treatments" rows="6"></textarea><label class="helper" for="gastroenterology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section gas-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="gastroenterology-clinics" name="gastroenterology-clinics" rows="6"></textarea><label class="helper" for="gastroenterology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#ent">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#gynecology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="gynecology">
+					<h2 class="subheading">Gynecology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="gyn-1" name="diagnosis"><label class="txt" for="gyn-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="gyn-2" name="complications"><label class="txt" for="gyn-2">Complications</label>
+					<input class="check" type="checkbox" id="gyn-3" name="investigations"><label class="txt" for="gyn-3">Investigations</label>
+					<input class="check" type="checkbox" id="gyn-4" name="treatments"><label class="txt" for="gyn-4">Treatments</label>
+					<input class="check" type="checkbox" id="gyn-5" name="clinics"><label class="txt" for="gyn-5">Clinics</label>
+					<article class="section gyn-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="gynecology-diagnosis" name="gynecology-diagnosis" rows="6"></textarea><label class="helper" for="gynecology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section gyn-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="gynecology-complications" name="gynecology-complications" rows="6"></textarea><label class="helper" for="gynecology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section gyn-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="gynecology-investigations" name="gynecology-investigations" rows="6"></textarea><label class="helper" for="gynecology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section gyn-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="gynecology-treatments" name="gynecology-treatments" rows="6"></textarea><label class="helper" for="gynecology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section gyn-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="gynecology-clinics" name="gynecology-clinics" rows="6"></textarea><label class="helper" for="gynecology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#gastroenterology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#hepatology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="hepatology">
+					<h2 class="subheading">Hepatology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="hep-1" name="diagnosis"><label class="txt" for="hep-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="hep-2" name="complications"><label class="txt" for="hep-2">Complications</label>
+					<input class="check" type="checkbox" id="hep-3" name="investigations"><label class="txt" for="hep-3">Investigations</label>
+					<input class="check" type="checkbox" id="hep-4" name="treatments"><label class="txt" for="hep-4">Treatments</label>
+					<input class="check" type="checkbox" id="hep-5" name="clinics"><label class="txt" for="hep-5">Clinics</label>
+					<article class="section hep-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="hepatology-diagnosis" name="hepatology-diagnosis" rows="6"></textarea><label class="helper" for="hepatology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section hep-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="hepatology-complications" name="hepatology-complications" rows="6"></textarea><label class="helper" for="hepatology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section hep-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="hepatology-investigations" name="hepatology-investigations" rows="6"></textarea><label class="helper" for="hepatology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section hep-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="hepatology-treatments" name="hepatology-treatments" rows="6"></textarea><label class="helper" for="hepatology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section hep-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="hepatology-clinics" name="hepatology-clinics" rows="6"></textarea><label class="helper" for="hepatology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#gynecology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#nephrology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="nephrology">
+					<h2 class="subheading">Nephrology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="nep-1" name="diagnosis"><label class="txt" for="nep-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="nep-2" name="complications"><label class="txt" for="nep-2">Complications</label>
+					<input class="check" type="checkbox" id="nep-3" name="investigations"><label class="txt" for="nep-3">Investigations</label>
+					<input class="check" type="checkbox" id="nep-4" name="treatments"><label class="txt" for="nep-4">Treatments</label>
+					<input class="check" type="checkbox" id="nep-5" name="clinics"><label class="txt" for="nep-5">Clinics</label>
+					<article class="section nep-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="nephrology-diagnosis" name="nephrology-diagnosis" rows="6"></textarea><label class="helper" for="nephrology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section nep-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="nephrology-complications" name="nephrology-complications" rows="6"></textarea><label class="helper" for="nephrology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section nep-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="nephrology-investigations" name="nephrology-investigations" rows="6"></textarea><label class="helper" for="nephrology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section nep-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="nephrology-treatments" name="nephrology-treatments" rows="6"></textarea><label class="helper" for="nephrology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section nep-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="nephrology-clinics" name="nephrology-clinics" rows="6"></textarea><label class="helper" for="nephrology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#hepatology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#neurology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="neurology">
+					<h2 class="subheading">Neurology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="neu-1" name="diagnosis"><label class="txt" for="neu-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="neu-2" name="complications"><label class="txt" for="neu-2">Complications</label>
+					<input class="check" type="checkbox" id="neu-3" name="investigations"><label class="txt" for="neu-3">Investigations</label>
+					<input class="check" type="checkbox" id="neu-4" name="treatments"><label class="txt" for="neu-4">Treatments</label>
+					<input class="check" type="checkbox" id="neu-5" name="clinics"><label class="txt" for="neu-5">Clinics</label>
+					<article class="section neu-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="neurology-diagnosis" name="neurology-diagnosis" rows="6"></textarea><label class="helper" for="neurology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section neu-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="neurology-complications" name="neurology-complications" rows="6"></textarea><label class="helper" for="neurology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section neu-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="neurology-investigations" name="neurology-investigations" rows="6"></textarea><label class="helper" for="neurology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section neu-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="neurology-treatments" name="neurology-treatments" rows="6"></textarea><label class="helper" for="neurology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section neu-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="neurology-clinics" name="neurology-clinics" rows="6"></textarea><label class="helper" for="neurology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#nephrology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#oncology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="oncology">
+					<h2 class="subheading">Oncology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="onc-1" name="diagnosis"><label class="txt" for="onc-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="onc-2" name="complications"><label class="txt" for="onc-2">Complications</label>
+					<input class="check" type="checkbox" id="onc-3" name="investigations"><label class="txt" for="onc-3">Investigations</label>
+					<input class="check" type="checkbox" id="onc-4" name="treatments"><label class="txt" for="onc-4">Treatments</label>
+					<input class="check" type="checkbox" id="onc-5" name="clinics"><label class="txt" for="onc-5">Clinics</label>
+					<article class="section onc-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="oncology-diagnosis" name="ooncologync-diagnosis" rows="6"></textarea><label class="helper" for="oncology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section onc-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="oncology-complications" name="oncology-complications" rows="6"></textarea><label class="helper" for="oncology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section onc-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="oncology-investigations" name="oncology-investigations" rows="6"></textarea><label class="helper" for="oncology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section onc-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="oncology-treatments" name="oncology-treatments" rows="6"></textarea><label class="helper" for="oncology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section onc-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="oncology-clinics" name="oncology-clinics" rows="6"></textarea><label class="helper" for="oncology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#neurology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#podiatry">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="podiatry">
+					<h2 class="subheading">Podiatry</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="pod-1" name="diagnosis"><label class="txt" for="pod-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="pod-2" name="complications"><label class="txt" for="pod-2">Complications</label>
+					<input class="check" type="checkbox" id="pod-3" name="investigations"><label class="txt" for="pod-3">Investigations</label>
+					<input class="check" type="checkbox" id="pod-4" name="treatments"><label class="txt" for="pod-4">Treatments</label>
+					<input class="check" type="checkbox" id="pod-5" name="clinics"><label class="txt" for="pod-5">Clinics</label>
+					<article class="section pod-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="podiatry-diagnosis" name="podiatry-diagnosis" rows="6"></textarea><label class="helper" for="podiatry-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section pod-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="podiatry-complications" name="podiatry-complications" rows="6"></textarea><label class="helper" for="podiatry-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section pod-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="podiatry-investigations" name="podiatry-investigations" rows="6"></textarea><label class="helper" for="podiatry-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section pod-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="podiatry-treatments" name="podiatry-treatments" rows="6"></textarea><label class="helper" for="podiatry-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section pod-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="podiatry-clinics" name="podiatry-clinics" rows="6"></textarea><label class="helper" for="podiatry-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#oncology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#psychiatry">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="psychiatry">
+					<h2 class="subheading">Psychiatry</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="psy-1" name="diagnosis"><label class="txt" for="psy-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="psy-2" name="complications"><label class="txt" for="psy-2">Complications</label>
+					<input class="check" type="checkbox" id="psy-3" name="investigations"><label class="txt" for="psy-3">Investigations</label>
+					<input class="check" type="checkbox" id="psy-4" name="treatments"><label class="txt" for="psy-4">Treatments</label>
+					<input class="check" type="checkbox" id="psy-5" name="clinics"><label class="txt" for="psy-5">Clinics</label>
+					<article class="section psy-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="psychiatry-diagnosis" name="psychiatry-diagnosis" rows="6"></textarea><label class="helper" for="psychiatry-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section psy-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="psychiatry-complications" name="psychiatry-complications" rows="6"></textarea><label class="helper" for="psychiatry-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section psy-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="psychiatry-investigations" name="psychiatry-investigations" rows="6"></textarea><label class="helper" for="psychiatry-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section psy-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="psychiatry-treatments" name="psychiatry-treatments" rows="6"></textarea><label class="helper" for="psychiatry-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section psy-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="psychiatry-clinics" name="psychiatry-clinics" rows="6"></textarea><label class="helper" for="psychiatry-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#podiatry">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#pulmonology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="pulmonology">
+					<h2 class="subheading">Pulmonology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="pul-1" name="diagnosis"><label class="txt" for="pul-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="pul-2" name="complications"><label class="txt" for="pul-2">Complications</label>
+					<input class="check" type="checkbox" id="pul-3" name="investigations"><label class="txt" for="pul-3">Investigations</label>
+					<input class="check" type="checkbox" id="pul-4" name="treatments"><label class="txt" for="pul-4">Treatments</label>
+					<input class="check" type="checkbox" id="pul-5" name="clinics"><label class="txt" for="pul-5">Clinics</label>
+					<article class="section pul-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="pulmonology-diagnosis" name="pulmonology-diagnosis" rows="6"></textarea><label class="helper" for="pulmonology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section pul-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="pulmonology-complications" name="pulmonology-complications" rows="6"></textarea><label class="helper" for="pulmonology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section pul-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="pulmonology-investigations" name="pulmonology-investigations" rows="6"></textarea><label class="helper" for="pulmonology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section pul-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="pulmonology-treatments" name="pulmonology-treatments" rows="6"></textarea><label class="helper" for="pulmonology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section pul-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="pulmonology-clinics" name="pulmonology-clinics" rows="6"></textarea><label class="helper" for="pulmonology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#psychiatry">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#rheumatology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="rheumatology">
+					<h2 class="subheading">Rheumatology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="rhe-1" name="diagnosis"><label class="txt" for="rhe-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="rhe-2" name="complications"><label class="txt" for="rhe-2">Complications</label>
+					<input class="check" type="checkbox" id="rhe-3" name="investigations"><label class="txt" for="rhe-3">Investigations</label>
+					<input class="check" type="checkbox" id="rhe-4" name="treatments"><label class="txt" for="rhe-4">Treatments</label>
+					<input class="check" type="checkbox" id="rhe-5" name="clinics"><label class="txt" for="rhe-5">Clinics</label>
+					<article class="section rhe-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="rheumatology-diagnosis" name="rheumatology-diagnosis" rows="6"></textarea><label class="helper" for="rheumatology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section rhe-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="rheumatology-complications" name="rheumatology-complications" rows="6"></textarea><label class="helper" for="rheumatology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section rhe-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="rheumatology-investigations" name="rheumatology-investigations" rows="6"></textarea><label class="helper" for="rheumatology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section rhe-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="rheumatology-treatments" name="rheumatology-treatments" rows="6"></textarea><label class="helper" for="rheumatology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section rhe-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="rheumatology-clinics" name="rheumatology-clinics" rows="6"></textarea><label class="helper" for="rheumatology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#pulmonology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#urology">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="urology">
+					<h2 class="subheading">Urology</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="uro-1" name="diagnosis"><label class="txt" for="uro-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="uro-2" name="complications"><label class="txt" for="uro-2">Complications</label>
+					<input class="check" type="checkbox" id="uro-3" name="investigations"><label class="txt" for="uro-3">Investigations</label>
+					<input class="check" type="checkbox" id="uro-4" name="treatments"><label class="txt" for="uro-4">Treatments</label>
+					<input class="check" type="checkbox" id="uro-5" name="clinics"><label class="txt" for="uro-5">Clinics</label>
+					<article class="section uro-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="urology-diagnosis" name="urology-diagnosis" rows="6"></textarea><label class="helper" for="urology-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section uro-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="urology-complications" name="urology-complications" rows="6"></textarea><label class="helper" for="urology-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section uro-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="urology-investigations" name="urology-investigations" rows="6"></textarea><label class="helper" for="urology-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section uro-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="urology-treatments" name="urology-treatments" rows="6"></textarea><label class="helper" for="urology-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section uro-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="urology-clinics" name="urology-clinics" rows="6"></textarea><label class="helper" for="urology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#rheumatology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#vision">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="vision">
+					<h2 class="subheading">Vision</h2>
+					<p class="txt">Which sections do you require?</p>
+					<input class="check" type="checkbox" id="vis-1" name="diagnosis"><label class="txt" for="vis-1">Diagnosis</label>
+					<input class="check" type="checkbox" id="vis-2" name="complications"><label class="txt" for="vis-2">Complications</label>
+					<input class="check" type="checkbox" id="vis-3" name="investigations"><label class="txt" for="vis-3">Investigations</label>
+					<input class="check" type="checkbox" id="vis-4" name="treatments"><label class="txt" for="vis-4">Treatments</label>
+					<input class="check" type="checkbox" id="vis-5" name="clinics"><label class="txt" for="vis-5">Clinics</label>
+					<article class="section vis-1">
+						<h3 class="subsection">Diagnosis</h3>
+						<textarea class="text area" id="vision-diagnosis" name="vision-diagnosis" rows="6"></textarea><label class="helper" for="vision-diagnosis">Put each diagnosis on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section vis-2">
+						<h3 class="subsection">Complications</h3>
+						<textarea class="text area" id="vision-complications" name="vision-complications" rows="6"></textarea><label class="helper" for="vision-complications">Put each complication on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section vis-3">
+						<h3 class="subsection">Investigations</h3>
+						<textarea class="text area" id="vision-investigations" name="vision-investigations" rows="6"></textarea><label class="helper" for="vision-investigations">Put each investigation on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section vis-4">
+						<h3 class="subsection">Treatments</h3>
+						<textarea class="text area" id="vision-treatments" name="vision-treatments" rows="6"></textarea><label class="helper" for="vision-treatments">Put each treatment on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<article class="section vis-5">
+						<h3 class="subsection">Clinics</h3>
+						<textarea class="text area" id="vision-clinics" name="vision-clinics" rows="6"></textarea><label class="helper" for="vision-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
+					</article>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#urology">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+						<li><a class="buzzer" href="#finish">Next</a></li>
+					</ul>
+				</article>
+				<article class="page" id="finish">
+					<h2 class="subheading">Finish</h2>
+					<p class="txt">Do you want to save your progress?</p>
+					<input class="button" id="export-json" type="button" value="Export (JSON)">
+					<p class="txt">Do you want to create your personal health record?</p>
+					<input class="button" id="export-html" type="button" value="Export (HTML)">
+					<p class="txt">Do you want to delete your existing session?</p>
+					<input class="button" type="reset" value="Reset Data">
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#vision">Previous</a></li>
+						<li><a class="buzzer" href="#">Home</a></li>
+					</ul>
+				</article>
+				<article class="about" id="about">
+					<h2 class="subheading">About</h2>
+					<p class="txt">Do you have a long medical history? Would you like to store it in an easy-to-read format? Do you value your privacy? If yes, this is the app for you. Medica11y is a Personal Health Record with a difference - You own your data!</p>
+					<p class="txt">The report you'll produce is in a totally open format (HTML). Meanining anyone with a computer (like your Doctor) can view it (only when you share it of course). No third party apps are required, no terms of service agreements, and no payment is required. You can use it on any platform, you can store it anywhere, and view it anywhere (even on your phone - say in iCloud Drive). You don't even need this site to edit your record!</p>
+					<p class="txt">We don't track or store anything you enter on the website, your machine processes the code and outputs the report (our code is open source - so feel free to take a look). The site also uses SSL encryption and doesn't use cookies (so you'll lose your progress if you leave the site). You can import and export your data in a JSON file to help you make edits at a later date (if you'd like to use the website to make edits).</p>
+					<p class="txt">Why all of this for free? Because I needed something like this for myself. I have a number of health issues and wanted a method to track my conditions, complications, investigations and treatments. Most of the apps in the app store share your data, or store it outside your device. The built-in medical ID apps have a lot of limitations for people with lots of data to track. HTML is plaintext so it's not dependant on any platform or app, you can also put it anywhere (including password managers) to maintain control of your data. And there are no compatibility issues with viewing it.</p>
+					<ul class="anchor" aria-hidden="true" role="list">
+						<li><a class="buzzer" href="#start">Lets Get Started</a></li>
+					</ul>
+				</article>
+			</form>
+		</main>
+		<footer class="footer">
+			<nav class="nav">
+				<h2 class="subheading">Sitemap</h2>
+				<ul class="group" aria-hidden="true" role="list">
+					<li class="item"><a class="region" href="#home">Home</a></li>
+					<li class="item"><a class="region" href="#start">Start</a></li>
+					<li class="item"><a class="region" href="#profile">Profile</a></li>
+					<li class="item"><a class="region" href="#allergy">Allergy</a></li>
+					<li class="item"><a class="region" href="#cardiology">Cardiology</a><dfn class="dfn" title="Heart"> ?</dfn></li>
+					<li class="item"><a class="region" href="#dental">Dental</a><dfn class="dfn" title="Teeth"> ?</dfn></li>
+					<li class="item"><a class="region" href="#dermatology">Dermatology</a><dfn class="dfn" title="Skin"> ?</dfn></li>
+					<li class="item"><a class="region" href="#endocrinology">Endocrinology</a><dfn class="dfn" title="Glands and Hormones"> ?</dfn></li>
+					<li class="item"><a class="region" href="#ENT">ENT</a><dfn class="dfn" title="Ear, Nose, and Throat"> ?</dfn></li>
+					<li class="item"><a class="region" href="#gastroenterology">Gastroenterology</a><dfn class="dfn" title="Stomach and Intestine"> ?</dfn></li>
+					<li class="item"><a class="region" href="#gynecology">Gynecology</a><dfn class="dfn" title="Women's Health"> ?</dfn></li>
+					<li class="item"><a class="region" href="#hepatology">Hepatology</a><dfn class="dfn" title="Liver, Gallbladder, and Pancreas"> ?</dfn></li>
+					<li class="item"><a class="region" href="#nephrology">Nephrology</a><dfn class="dfn" title="Kidneys"> ?</dfn></li>
+					<li class="item"><a class="region" href="#neurology">Neurology</a><dfn class="dfn" title="Brain"> ?</dfn></li>
+					<li class="item"><a class="region" href="#oncology">Oncology</a><dfn class="dfn" title="Cancer"> ?</dfn></li>
+					<li class="item"><a class="region" href="#podiatry">Podiatry</a><dfn class="dfn" title="Feet"> ?</dfn></li>
+					<li class="item"><a class="region" href="#psychiatry">Psychiatry</a><dfn class="dfn" title="Mental Health"> ?</dfn></li>
+					<li class="item"><a class="region" href="#pulmonology">Pulmonology</a><dfn class="dfn" title="Lungs"> ?</dfn></li>
+					<li class="item"><a class="region" href="#rheumatology">Rheumatology</a><dfn class="dfn" title="Joints"> ?</dfn></li>
+					<li class="item"><a class="region" href="#urology">Urology</a><dfn class="dfn" title="Urine"> ?</dfn></li>
+					<li class="item"><a class="region" href="#vision">Vision</a><dfn class="dfn" title="Eyes"> ?</dfn></li>
+					<li class="item"><a class="region" href="#finish">Finish</a></li>
+				</ul>
+			</nav>
+			<p class="copyright">Copyright, <span class="year">2023</span></p>
+			<p class="build">Built by <a href="https://alexanderdawson.com">Alex Dawson</a>.</p>
+		</footer>
+		<script async src="cache/script.js"></script>
+	</body>
+</html>
