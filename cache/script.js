@@ -210,8 +210,10 @@ document.getElementById('import').addEventListener('change', function selectedFi
 				for (let i = 0; i < chk.length; i++) {
 					if (chk[i].checked == true) {
 						if (document.getElementById(elem + '-' + chk[i].getAttribute('name')).value != '') {
+							const word = chk[i].getAttribute('name')
+							const capitalized = word.charAt(0).toUpperCase() + word.slice(1)
 							section = section + '						<input class="special" id="' + elem + '-' + chk[i].getAttribute('name') + '" name="' + elem + '" type="radio" value="' + elem + '-' + chk[i].getAttribute('name') + '"' + checkr + '>' + '\n';
-							section = section + '						<label class="format ' + fst + '" for="' + elem + '-' + chk[i].getAttribute('name') + '"><svg class="svg"><use xlink:href="#icon-' + chk[i].getAttribute('name') + '"/></svg></label>' + '\n';
+							section = section + '						<label class="format ' + fst + '" for="' + elem + '-' + chk[i].getAttribute('name') + '" aria-labelledby="' + chk[i].getAttribute('name') + '" title="' + capitalized + '"><svg class="svg"><use xlink:href="#icon-' + chk[i].getAttribute('name') + '"/></svg></label>' + '\n';
 							if (elem + '-' + chk[i].getAttribute('name') == 'allergy-clinics') {
 								section = section + '<div class="split"></div>' + '\n'; }
 							sector = chk[i].getAttribute('name');
