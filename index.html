@@ -25,6 +25,7 @@
 		<meta property="og:url" content="https://medica11y.com/">
 		<meta property="og:image" content="images/banner.png">
 		<meta property="og:image:alt" content="Logo">
+		<script defer src="cache/script.js"></script>
 		<script type="application/ld+json">
 		{
 			"@context" : "https://schema.org",
@@ -48,14 +49,14 @@
 					<p class="txt">Do you want to import your progress?</p>
 					<input class="hide" id="import" type="file" accept="application/json"><label class="buzzer" for="import">Import A File</label>
 					<input class="button" type="reset" value="Reset Data">
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#profile">Next</a></li>
 					</ul>
 				</article>
 				<article class="page" id="profile">
 					<h2 class="subheading">Profile</h2>
-					<ul class="form" role="list">
+					<ul class="form">
 						<li class="list"><label class="tag" for="dob">Date Of Birth:</label><input class="text" type="date" id="dob" name="dob" autocomplete="bday"></li>
 						<li class="list"><label class="tag" for="hid">Healthcare ID:</label><input class="text" type="text" id="hid" name="hid" size="15"><label class="helper" for="hid">Your hospital or patient number (NHS, Bupa, Medicare, Etc).</label></li>
 						<li class="list"><label class="tag" for="iid">Insurance ID:</label><input class="text" type="text" id="iid" name="iid" size="15"><label class="tag" for="exp">Expiry:</label><input class="text" type="date" id="exp" name="exp"><label class="helper" for="iid">Your healthcare coverage identifier (NHS-PPC, EHIC, SIN, Etc).</label></li>
@@ -69,7 +70,7 @@
 						<li class="list"><label class="tag" for="temp">Temperature (Average):</label><input class="text" type="text" id="temp" name="temp" minlength="1" maxlength="5" size="5"><select class="drop text" name="fc" id="fc"><option value="f" selected>Fahrenheit (f)</option><option value="c">Centigrade (C)</option></select><label class="helper" for="temp">Take 3 times at different points of the day to get the average temperature.</label></li>
 						<li class="list"><label class="tag" for="peakflow">Peak Flow (Average):</label><input class="text" type="text" inputmode="numeric" pattern="[0-9]*" id="peakflow" name="peakflow" minlength="1" maxlength="3" size="3"><label class="helper" for="peakflow">Take 3 times to get a base reading, and follow up with 3 further readings on different days to get the average peak flow.</label></li>
 					</ul>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#start">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#allergy">Next</a></li>
@@ -128,7 +129,7 @@
 						<h3 class="subsection">Dangerous</h3>
 						<textarea class="text area" id="allergy-dangerous" name="allergy-dangerous" rows="6"></textarea><label class="helper" for="allergy-dangerous">Dangerous allergy include anaphylaxis (shock), significant drug reactions, etc. Put each dangerous allergy on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#profile">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#cardiology">Next</a></li>
@@ -162,7 +163,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="cardiology-clinics" name="cardiology-clinics" rows="6"></textarea><label class="helper" for="cardiology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#allergy">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#dental">Next</a></li>
@@ -196,7 +197,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="dental-clinics" name="dental-clinics" rows="6"></textarea><label class="helper" for="dental-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#cardiology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#dermatology">Next</a></li>
@@ -230,7 +231,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="dermatology-clinics" name="dermatology-clinics" rows="6"></textarea><label class="helper" for="dermatology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#dental">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#endocrinology">Next</a></li>
@@ -264,7 +265,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="endocrinology-clinics" name="endocrinology-clinics" rows="6"></textarea><label class="helper" for="endocrinology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#dermatology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#ENT">Next</a></li>
@@ -298,7 +299,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="ENT-clinics" name="ENT-clinics" rows="6"></textarea><label class="helper" for="ENT-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#endocrinology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#gastroenterology">Next</a></li>
@@ -332,7 +333,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="gastroenterology-clinics" name="gastroenterology-clinics" rows="6"></textarea><label class="helper" for="gastroenterology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#ent">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#gynecology">Next</a></li>
@@ -366,7 +367,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="gynecology-clinics" name="gynecology-clinics" rows="6"></textarea><label class="helper" for="gynecology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#gastroenterology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#hepatology">Next</a></li>
@@ -400,7 +401,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="hepatology-clinics" name="hepatology-clinics" rows="6"></textarea><label class="helper" for="hepatology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#gynecology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#nephrology">Next</a></li>
@@ -434,7 +435,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="nephrology-clinics" name="nephrology-clinics" rows="6"></textarea><label class="helper" for="nephrology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#hepatology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#neurology">Next</a></li>
@@ -468,7 +469,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="neurology-clinics" name="neurology-clinics" rows="6"></textarea><label class="helper" for="neurology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#nephrology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#oncology">Next</a></li>
@@ -502,7 +503,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="oncology-clinics" name="oncology-clinics" rows="6"></textarea><label class="helper" for="oncology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#neurology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#podiatry">Next</a></li>
@@ -536,7 +537,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="podiatry-clinics" name="podiatry-clinics" rows="6"></textarea><label class="helper" for="podiatry-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#oncology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#psychiatry">Next</a></li>
@@ -570,7 +571,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="psychiatry-clinics" name="psychiatry-clinics" rows="6"></textarea><label class="helper" for="psychiatry-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#podiatry">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#pulmonology">Next</a></li>
@@ -604,7 +605,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="pulmonology-clinics" name="pulmonology-clinics" rows="6"></textarea><label class="helper" for="pulmonology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#psychiatry">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#rheumatology">Next</a></li>
@@ -638,7 +639,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="rheumatology-clinics" name="rheumatology-clinics" rows="6"></textarea><label class="helper" for="rheumatology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#pulmonology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#urology">Next</a></li>
@@ -672,7 +673,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="urology-clinics" name="urology-clinics" rows="6"></textarea><label class="helper" for="urology-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#rheumatology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#vision">Next</a></li>
@@ -706,7 +707,7 @@
 						<h3 class="subsection">Clinics</h3>
 						<textarea class="text area" id="vision-clinics" name="vision-clinics" rows="6"></textarea><label class="helper" for="vision-clinics">Put each clinic on a new line. For subheadings, use the hash (#) character. For footnotes, use the wildcard (*) character. To highlight, use the At (@) character.</label>
 					</article>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#urology">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 						<li><a class="buzzer" href="#finish">Next</a></li>
@@ -720,7 +721,7 @@
 					<input class="button" id="export-html" type="button" value="Export (HTML)">
 					<p class="txt">Do you want to delete your existing session?</p>
 					<input class="button" type="reset" value="Reset Data">
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#vision">Previous</a></li>
 						<li><a class="buzzer" href="#">Home</a></li>
 					</ul>
@@ -731,7 +732,7 @@
 					<p class="txt">The report you'll produce is in a totally open format (HTML). Meanining anyone with a computer (like your Doctor) can view it (only when you share it of course). No third party apps are required, no terms of service agreements, and no payment is required. You can use it on any platform, you can store it anywhere, and view it anywhere (even on your phone - say in iCloud Drive). You don't even need this site to edit your record!</p>
 					<p class="txt">We don't track or store anything you enter on the website, your machine processes the code and outputs the report (our code is <a href="https://github.com/AlexDawsonUK/Medica11y">open source</a> - so feel free to take a look). The site also uses SSL encryption and doesn't use cookies (so you'll lose your progress if you leave the site). You can import and export your data in a JSON file to help you make edits at a later date (if you'd like to use the website to make edits).</p>
 					<p class="txt">Why all of this for free? Because I needed something like this for myself. I have a number of health issues and wanted a method to track my conditions, complications, investigations and treatments. Most of the apps in the app store share your data, or store it outside your device. The built-in medical ID apps have a lot of limitations for people with lots of data to track. HTML is plaintext so it's not dependant on any platform or app, you can also put it anywhere (including password managers) to maintain control of your data. And there are no compatibility issues with viewing it.</p>
-					<ul class="anchor" aria-hidden="true" role="list">
+					<ul class="anchor" aria-hidden="true">
 						<li><a class="buzzer" href="#start">Lets Get Started</a></li>
 					</ul>
 				</article>
@@ -740,7 +741,7 @@
 		<footer class="footer">
 			<nav class="nav">
 				<h2 class="subheading">Sitemap</h2>
-				<ul class="group" aria-hidden="true" role="list">
+				<ul class="group" aria-hidden="true">
 					<li class="item"><a class="region" href="#home">Home</a></li>
 					<li class="item"><a class="region" href="#start">Start</a></li>
 					<li class="item"><a class="region" href="#profile">Profile</a></li>
@@ -768,6 +769,5 @@
 			<p class="copyright">Copyright, <span class="year">2023</span></p>
 			<p class="build">Built by <a href="https://alexanderdawson.com">Alex Dawson</a>.</p>
 		</footer>
-		<script async src="cache/script.js"></script>
 	</body>
 </html>

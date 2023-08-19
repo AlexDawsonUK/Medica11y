@@ -159,7 +159,7 @@ document.getElementById('import').addEventListener('change', function selectedFi
 					'					<label class="specs" for="profile"><svg class="svg-cat"><use xlink:href="#icon-profile"/></svg>Profile</label>' + '\n' +
 					'					<fieldset class="category">' + '\n' +
 					// Profile Validator
-					'						<ul class="list" role="list">' + '\n';
+					'						<ul class="list">' + '\n';
 												if (document.getElementById('dob').value != '') { profile = profile + '							<li class="txt"><svg class="svg-bullet"><use xlink:href="#icon-dob"/></svg><strong>Date Of Birth:</strong>' + document.getElementById('dob').value + '</li>' + '\n'; }
 												if (document.getElementById('hid').value != '') { profile = profile + '							<li class="txt"><svg class="svg-bullet"><use xlink:href="#icon-hid"/></svg><strong>Healthcare ID:</strong>' + document.getElementById('hid').value + '</li>' + '\n'; }
 												if (document.getElementById('iid').value != '') {
@@ -223,11 +223,11 @@ document.getElementById('import').addEventListener('change', function selectedFi
 					if (chk[i].checked == true) {
 						if (document.getElementById(elem + '-' + chk[i].getAttribute('name')).value != '') {
 							section = section + '						<fieldset class="' + chk[i].getAttribute('name') + '">' + '\n'
-							let markdown = 	'<ul class="list" role="list">' + '\n' +
+							let markdown = 	'<ul class="list">' + '\n' +
 											document.getElementById(elem + '-' + chk[i].getAttribute('name')).value + '\n' +
 											'</ul>';
 							// Newline Formatting - Tabs
-							markdown = markdown.replace(new RegExp(/\n\n/, 'g'), '\n' + '</ul>' + '\n' + '<ul class="list" role="list">' + '\n');
+							markdown = markdown.replace(new RegExp(/\n\n/, 'g'), '\n' + '</ul>' + '\n' + '<ul class="list">' + '\n');
 							markdown = markdown.replace(new RegExp(/\n/g, 'g'), '\n' + '<li class="txt"><svg class="svg-bullet"><use xlink:href="#icon-' + chk[i].getAttribute('name') + '"/></svg>');
 							// Subheadings Formatting
 							let heading = '<li class="txt"><svg class="svg-bullet"><use xlink:href="#icon-' + chk[i].getAttribute('name') + '"/></svg># ';
@@ -264,7 +264,7 @@ document.getElementById('import').addEventListener('change', function selectedFi
 							var footnote = getFromBetween.get(markdown,'* ','<');
 							if (footnote != '') {
 								for (let i = 0; i < footnote.length; i++) {
-									markdown = markdown.replace('* ' + footnote[i] + '<', '</li>\n</ul>\n<p class="txt"><small>' + footnote[i] + '</small></p>\n<ul class="list" role="list">\n<');
+									markdown = markdown.replace('* ' + footnote[i] + '<', '</li>\n</ul>\n<p class="txt"><small>' + footnote[i] + '</small></p>\n<ul class="list">\n<');
 									markdown = markdown.replace('\n</small></p>','</small></p>'); } }
 							// Highlight Formatting
 							var highlight = getFromBetween.get(markdown,'@','@');
@@ -278,7 +278,7 @@ document.getElementById('import').addEventListener('change', function selectedFi
 							markdown = markdown.replace(new RegExp('"></li>', 'g'), '">');
 							markdown = markdown.replace(new RegExp(/\n<\/li>/g, 'g'), '');
 							markdown = markdown.replace(new RegExp(/<\/ul><\/li>/g, 'g'), '</ul>');
-							markdown = markdown.replace(new RegExp(/<ul class="list" role="list">\n<\/ul>/g, 'g'), '');
+							markdown = markdown.replace(new RegExp(/<ul class="list">\n<\/ul>/g, 'g'), '');
 							section = section + markdown;
 							section = section + '						</fieldset>' + '\n'
 						}
