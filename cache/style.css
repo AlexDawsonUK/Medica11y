@@ -150,7 +150,7 @@
 	.check + .txt:before, .helper, .tag {
 		vertical-align: middle; }
 	.area {
-		width: calc(100% - 14px); }
+		width: calc(100% - 16px); }
 }
 @media screen and (max-width: 650px) {
 	.item {
