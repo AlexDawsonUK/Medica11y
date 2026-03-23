@@ -145,7 +145,8 @@
 	.about, .build, .copyright, .nav, .page {
 		padding-left: 2em;
 		padding-right: 2em; }
-	.buzzer, .check + .txt:before, .error-head, .error-sub, .error-txt, .subheading, .subsection {
+	.buzzer, .check + .txt:before, .error-head, .error-sub, .error-txt, .error-txt a, .subheading, .subsection {
+		color: #ffffff;
 		text-align: center; }
 	.check + .txt:before, .helper, .tag {
 		vertical-align: middle; }
