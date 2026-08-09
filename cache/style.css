@@ -170,6 +170,8 @@
 		color: #dfdfdf; }
 	.button:hover, .buzzer:hover {
 		color: #121212; }
+	a {
+		color: #ffffff; }
 }
 @media (prefers-reduced-motion: reduce), (update: slow) {
 	*:not(.safe-animation),
