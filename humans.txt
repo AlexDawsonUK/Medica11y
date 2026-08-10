@@ -19,4 +19,3 @@ Components:	None
 Software:	VSCode, Affinity, Kanri, iTerm, UFocus, Typeface, Squoosh, Icon Slate
 Services:	Catamaran (Typeface), Icon54 + Pixel (Icons), Netlify, Porkbun
 Testing:	Chrome (Mac/PC), Firefox (Mac/PC), Safari (Mac/iOS)
-Updated:	https://medica11y.com/change.log
