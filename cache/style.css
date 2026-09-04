@@ -1,15 +1,11 @@
 @font-face {
 	font-family:'Catamaran';
-	src:local('Catamaran Regular'),
-		url('fonts/Catamaran-Regular.woff2') format('woff2'),
-		url('fonts/Catamaran-Regular.woff') format('woff');
+	src:local('Catamaran Regular'), url('fonts/Catamaran-Regular.woff2') format('woff2');
 	font-display: swap;
 }
 @font-face {
 	font-family:'Catamaran';
-	src:local('Catamaran Bold'),
-		url('fonts/Catamaran-Bold.woff2') format('woff2'),
-		url('fonts/Catamaran-Bold.woff') format('woff');
+	src:local('Catamaran Bold'), url('fonts/Catamaran-Bold.woff2') format('woff2');
 	font-display: swap;
 	font-weight: bold;
 }
